@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}Welcome to Searching!{% endblock %}
+{% block content %}
+{{ super() }}
+<form action="{{ url_for('search') }}" method="POST">
+<fieldset>
+<legend>Search by countries</legend>
+<p><input type="text" id="countryName" name="countryName" value=""/></p>
+<p><input type="Submit" value="Search"></p>
+</fieldset>
+</form>
+{% endblock content %}

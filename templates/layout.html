@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/index">Search again</a></li>
+		</ul>
+	</nav>
+	{% set messages = get_flashed_messages() %}
+	{% if messages %}
+	<section>
+		{% for message in messages %}
+		<p>{{ message }}</p>
+		{% endfor %}
+	</section>
+	{% endif %}
+	<section>
+		{% block content %}
+		<h1>{{ self.title() }}</h1>
+		{% endblock %}
+	</section>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/index">Search again</a></li>
+		</ul>
+	</nav>
+</body>
+
+</html>

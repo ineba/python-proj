@@ -22,7 +22,7 @@ def search():
     reader = csv.reader(lines)
     results = filter(lambda x: countryName in x, reader)
 
-    return render_template('data-return.html', data=results, type="Olympics")
+    return render_template('data-return.html', data=results, type="Medals Tally")
 
 
 # # start the server with the 'run()' method
